@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App3 from "./App3";
+import App from "./App";
 import "./index.css";
 import "../semantic/dist/semantic.min.css";
 
 ReactDOM.render(
-  <App3 />,
+  <App />,
   document.getElementById("root") // eslint-disable-line no-undef
 );
