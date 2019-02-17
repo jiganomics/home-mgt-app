@@ -1,7 +1,7 @@
 import React from "react";
-import Client from "./Client";
+import Client from "../../components/api/Client";
 
-class Due extends React.Component {
+class Bills extends React.Component {
   state = {
       bills: []
   };
@@ -38,7 +38,7 @@ class Due extends React.Component {
     ));
 
     return (
-      <div>
+      <div id="food-search">
         <table className="ui selectable structured large table">
           <thead>
             <tr>
@@ -61,9 +61,9 @@ class Due extends React.Component {
             {billRows}
           </tbody>
         </table>
-        </div>
+      </div>
     );
   }
 }
 
-export default Due;
+export default Bills;

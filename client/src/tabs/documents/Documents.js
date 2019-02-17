@@ -1,5 +1,5 @@
 import React from "react";
-import Client from "./Client";
+import Client from "../../components/api/Client";
 
 class Documents extends React.Component {
   state = {
@@ -21,18 +21,19 @@ class Documents extends React.Component {
 
     const transRows = transactions.map((trans, idx) => (
       <tr key={idx} onClick={() => this.props.onFoodClick(trans)}>
-        <td>{trans.qif.number}</td>
-        <td className="right aligned">{trans.qif.date}</td>
-        <td className="left aligned">{trans.qif ? trans.qif.payee : ''}</td>
-        <td className="right aligned">{trans.qif.status}</td>
-        <td className="right aligned">{trans.qif.amount}</td>
-        <td className="right aligned">{trans.qif.deposit}</td>
-        <td className="right aligned">{trans.qif.balance}</td>
+        <td>{trans.raw.number}</td>
+        <td className="right aligned">{trans.date}</td>
+        <td className="left aligned">{trans.payee}</td>
+        <td className="right aligned">{trans.status}</td>
+        <td className="right aligned">{trans.raw.debit}</td>
+        <td className="right aligned">{trans.raw.credit}</td>
+        <td className="right aligned">{trans.balance}</td>
       </tr>
     ));
 
     return (
-      <div id="food-search">
+      <div>
+        <a href="#">Add</a>
         <table className="ui selectable structured large table">
           <thead>
             <tr>

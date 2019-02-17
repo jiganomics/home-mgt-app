@@ -10,8 +10,14 @@
   },
   "dependencies": {
     "babel-plugin-transform-class-properties": "6.22.0",
-    "react": "15.4.0",
-    "react-dom": "15.4.0",
+    "mongodb": "^3.0.7",
+    "react": "^15.6.2",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^15.4.0",
+    "react-editable-table": "^1.12.32",
+    "react-modal": "^3.1.12",
+    "react-pager": "^1.3.3",
+    "redux": "^3.7.2",
     "semantic-ui": "^2.2.10"
   },
   "scripts": {

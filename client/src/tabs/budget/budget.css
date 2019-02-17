@@ -1,0 +1,76 @@
+
+<!-- 
+.budget div,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-family:"Trebuchet MS"; font-size:xx-small }
+ -->
+.monthHeader {
+	background-color: #3B4E87;
+	color: #3B4E87;
+	text-align: center;
+}
+.groupHeader {
+	color: #FFFFFF;
+	text-align: left;
+	font-size: 13px;
+	font-weight: bold;
+}
+.groupIncomeColor {
+	background-color: #006500;
+}
+.groupExpenseColor {
+	background-color: #3B4E87;
+}
+.categoryHeader {
+	color: #000000;
+	text-align: left;
+}
+.budgetHeader {
+	border-bottom: 1px solid #b2b2b2;
+	color: #000000;
+	text-align: center;
+	background-color: #8394C9;
+}
+.actualHeader {
+	border-bottom: 1px solid #b2b2b2;
+	color: #000000;
+	text-align: center;
+}
+.actualIncomeColor {
+	background-color: #D6F4D9;
+}
+.actualExpenseColor {
+	background-color: #E1D8BC;
+}
+.diffHeader {
+	color: #000000;
+	text-align: center;
+	background-color: #EAEAEA;
+}
+.budgetColumn {
+	border-bottom: 1px solid #b2b2b2;
+	border-left: 1px solid #b2b2b2;
+	border-right: 1px solid #b2b2b2;
+	color: #000000;
+	text-align: left;
+	background-color: #E4E8F3;
+}
+.actualColumn {
+	border-bottom: 1px solid #b2b2b2;
+	border-left: 1px solid #b2b2b2;
+	border-right: 1px solid #b2b2b2;
+	color: #000000;
+	text-align: left;
+}
+.diffColumn {
+	color: #B2B2B2;
+	text-align: right;
+	background-color: #EAEAEA;
+}
+.totalColumn {
+	color: #000000;
+	text-align: right;
+}
+.spacerColumn {
+	color: #000000;
+	text-align: left;
+	font-size: 2px;
+}

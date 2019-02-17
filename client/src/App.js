@@ -1,43 +1,28 @@
 import React, { Component } from 'react';
-import Checkbook from "./Checkbook";
-import Bills from "./Bills";
-import Documents from "./Documents";
-import Due from "./Due";
-import './App.css';
-import './tab.css';
-import './fixed-data-table.css';
-import Tabs from './tabs';
-import Pane from './pane';
-import {Table, Column, Cell} from 'fixed-data-table';
+import Dashboard from './components/display/Dashboard2';
+import store from './store';
+import Client from "./components/api/Client";
 
 class App extends Component {
+	onIncrement() {
+		store.dispatch({ type: 'INCREMENT'});
+	}
+	testFetch() {
+		Client.testFetch(data => {
+			console.log(data);
+		});
+	}
   render() {
-    return (
+	const {
+		value
+	} = this.props;
+
+	return (
     	<div>
-    		<div>
-    			<Tabs selected={0}>
-    				<Pane label="Bills">
-    					<div>
-    						<Bills />
-    					</div>
-    				</Pane>
-    				<Pane label="Checkbook">
-    					<div>
-    						<Checkbook />
-    					</div>
-    				</Pane>
-    				<Pane label="Documents">
-    					<div>
-    						<Documents />
-    					</div>
-    				</Pane>
-    				<Pane label="Due">
-						<div>
-							<Due />
-						</div>
-				</Pane>
-    			</Tabs>
-    		</div>
+	    	<h1>{value}</h1>
+			<button onClick={this.onIncrement}>+</button>
+			<button onClick={this.testFetch}>Fetch</button>
+	    	<Dashboard />
     	</div>
     );
   }

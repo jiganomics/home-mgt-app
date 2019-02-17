@@ -1,33 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Tabs = React.createClass({
-  displayName: 'Tabs',
-  propTypes: {
-    selected: React.PropTypes.number,
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.array,
-      React.PropTypes.element
-    ]).isRequired
-  },
-  getDefaultProps() {
-    return {
-      selected: 0
+class Tabs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayName: 'Tabs',
+      propTypes: {
+    	    selected: React.PropTypes.number,
+    	    children: React.PropTypes.oneOfType([
+    	      React.PropTypes.array,
+    	      React.PropTypes.element
+    	    ]).isRequired
+    	  }
     };
-  },
-  getInitialState() {
-    return {
-      selected: this.props.selected
-    };
-  },
+  }
+
   handleClick(index, event) {
     event.preventDefault();
-    this.setState({
-      selected: index
-    });
-  },
+    this.props.onSelect(index);
+  }
+
   _renderTitles() {
     function labels(child, index) {
-      let activeClass = (this.state.selected === index ? 'active' : '');
+      let activeClass = (this.props.selected === index ? 'active' : '');
       return (
         <li key={index}>
           <a href="#" 
@@ -43,14 +38,16 @@ const Tabs = React.createClass({
         {this.props.children.map(labels.bind(this))}
       </ul>
     );
-  },
+  }
+
   _renderContent() {
     return (
       <div className="tabs__content">
-        {this.props.children[this.state.selected]}
+        {this.props.children[this.props.selected]}
       </div>
     );
-  },
+  }
+
   render() {
     return (
       <div className="tabs">
@@ -59,6 +56,6 @@ const Tabs = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Tabs;
